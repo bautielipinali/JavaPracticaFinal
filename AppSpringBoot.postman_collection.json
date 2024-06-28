@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "9cc9ed1e-dce5-4c6d-8378-17b7b44be5e5",
+		"name": "AppSpringBoot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26833276"
+	},
+	"item": [
+		{
+			"name": "CrudOrders",
+			"item": [
+				{
+					"name": "GetOrders",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOnsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn0sInN1YiI6ImV6ZVVzZXIiLCJpYXQiOjE3MTkzNzczMDUsImV4cCI6MTcxOTQwNjEwNX0.rRSBu_rFN9IoEdUBHKZNDMf29xWVD9xZphhN9xFByjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 15,\r\n    \"unitPrice\": 30000.0,\r\n    \"quantity\": 4,\r\n    \"total\": 120000.0,\r\n    \"date\": \"2024-06-05\",\r\n    \"notes\": \"Numero de Serie BX8070110400 con 6 núcleos y 4.3GHz de frecuencia con gráfica integrada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOnsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn0sInN1YiI6ImV6ZVVzZXIiLCJpYXQiOjE3MTkzNzczMDUsImV4cCI6MTcxOTQwNjEwNX0.rRSBu_rFN9IoEdUBHKZNDMf29xWVD9xZphhN9xFByjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"unitPrice\": 300000000.0,\r\n    \"quantity\": 4,\r\n    \"total\": 120000.0,\r\n    \"date\": \"2024-06-05\",\r\n    \"notes\": \"Numeroooooooooooooooooooo de Serie BX8070110400 con 6 núcleos y 4.3GHz de frecuencia con gráfica integrada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/orders/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"orders",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOnsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn0sInN1YiI6ImV6ZVVzZXIiLCJpYXQiOjE3MTkzNzczMDUsImV4cCI6MTcxOTQwNjEwNX0.rRSBu_rFN9IoEdUBHKZNDMf29xWVD9xZphhN9xFByjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/orders/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"orders",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthenticateOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"adminUser\",\r\n    \"clave\": \"hola123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CrudProducts",
+			"item": [
+				{
+					"name": "GetProducts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOnsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn0sInN1YiI6ImV6ZVVzZXIiLCJpYXQiOjE3MTkzNzcxMzAsImV4cCI6MTcxOTQwNTkzMH0.6s01IyD0ajfJnMA0OZGpgtzL1aZcq66JNZk2vkjKLA8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"sku\": \"BX80701G6400\",\r\n    \t\"name\": \"Intel Pentium G6400\",\r\n    \t\"description\": \"Procesador Intel Pentium G6400 BX80701G6400 de 2 núcleos y 4GHz de frecuencia con gráfica integrada\",\r\n    \t\"price\": 94600,\r\n    \t\"status\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PutProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOnsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn0sInN1YiI6ImV6ZVVzZXIiLCJpYXQiOjE3MTkzNzcxMzAsImV4cCI6MTcxOTQwNTkzMH0.6s01IyD0ajfJnMA0OZGpgtzL1aZcq66JNZk2vkjKLA8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n  {\r\n\t\"sku\": \"BX80701G6400 - EDIT\",\r\n    \"name\": \"Intel Pentium G6400 - EDIT\",\r\n    \"description\": \"Procesador Intel - EDIT\",\r\n    \"price\": 15000,\r\n    \"status\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/products/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"products",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2wiOnsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn0sInN1YiI6ImV6ZVVzZXIiLCJpYXQiOjE3MTkzNzcxMzAsImV4cCI6MTcxOTQwNTkzMH0.6s01IyD0ajfJnMA0OZGpgtzL1aZcq66JNZk2vkjKLA8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/products/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"products",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindProduct",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/products/find/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"products",
+								"find",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthenticateProducts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"adminUser\",\r\n    \"clave\": \"hola123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
